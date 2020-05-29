@@ -1,7 +1,7 @@
-package com.polotechnologies.dagger2example.di
+package com.polotechnologies.dagger2example.di.modules
 
-import com.polotechnologies.dagger2example.dataClass.Rims
-import com.polotechnologies.dagger2example.dataClass.Tyres
+import com.polotechnologies.dagger2example.dataClass.wheels.Rims
+import com.polotechnologies.dagger2example.dataClass.wheels.Tyres
 import com.polotechnologies.dagger2example.dataClass.Wheels
 import dagger.Module
 import dagger.Provides

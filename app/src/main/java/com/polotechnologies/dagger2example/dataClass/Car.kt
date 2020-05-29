@@ -1,12 +1,15 @@
 package com.polotechnologies.dagger2example.dataClass
 
 import android.util.Log
+import com.polotechnologies.dagger2example.dataClass.engine.DieselEngine
+import com.polotechnologies.dagger2example.dataClass.engine.PetrolEngine
 import javax.inject.Inject
 
 class Car @Inject constructor(val wheels: Wheels, val engine: Engine) {
 
     fun drive(){
-        Log.d(Companion.TAG, "drive: Vroooooooommm")
+        engine.start()
+        Log.d(TAG, "drive: Vroooooooommm")
     }
 
     companion object {

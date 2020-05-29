@@ -1,6 +1,7 @@
 package com.polotechnologies.dagger2example.dataClass
 
-import javax.inject.Inject
+import com.polotechnologies.dagger2example.dataClass.wheels.Rims
+import com.polotechnologies.dagger2example.dataClass.wheels.Tyres
 
 class Wheels(private val rims: Rims, private val tyres: Tyres) {
 
