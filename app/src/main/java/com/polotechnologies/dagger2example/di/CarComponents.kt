@@ -8,7 +8,9 @@ import com.polotechnologies.dagger2example.di.modules.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [WheelsModule::class, PetrolEngineModule::class])
 interface CarComponents {
     val car: Car
