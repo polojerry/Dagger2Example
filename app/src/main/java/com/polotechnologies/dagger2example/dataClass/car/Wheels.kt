@@ -1,4 +1,4 @@
-package com.polotechnologies.dagger2example.dataClass
+package com.polotechnologies.dagger2example.dataClass.car
 
 import com.polotechnologies.dagger2example.dataClass.wheels.Rims
 import com.polotechnologies.dagger2example.dataClass.wheels.Tyres

@@ -1,7 +1,7 @@
 package com.polotechnologies.dagger2example.dataClass.engine
 
 import android.util.Log
-import com.polotechnologies.dagger2example.dataClass.Engine
+import com.polotechnologies.dagger2example.dataClass.car.Engine
 import javax.inject.Inject
 
 class PetrolEngine @Inject constructor() : Engine {

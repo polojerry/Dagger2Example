@@ -2,9 +2,9 @@ package com.polotechnologies.dagger2example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.polotechnologies.dagger2example.dataClass.Car
-import com.polotechnologies.dagger2example.di.CarComponents
+import com.polotechnologies.dagger2example.dataClass.car.Car
 import com.polotechnologies.dagger2example.di.DaggerCarComponents
+import com.polotechnologies.dagger2example.di.modules.DieselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val carComponents = DaggerCarComponents.create()
+        val carComponents = DaggerCarComponents.builder()
+                .dieselEngineModule(DieselEngineModule(100))
+                .build()
+
         carComponents.inject(this)
 
         car.drive()

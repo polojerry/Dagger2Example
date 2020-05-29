@@ -2,7 +2,7 @@ package com.polotechnologies.dagger2example.di.modules
 
 import com.polotechnologies.dagger2example.dataClass.wheels.Rims
 import com.polotechnologies.dagger2example.dataClass.wheels.Tyres
-import com.polotechnologies.dagger2example.dataClass.Wheels
+import com.polotechnologies.dagger2example.dataClass.car.Wheels
 import dagger.Module
 import dagger.Provides
 
@@ -10,19 +10,19 @@ import dagger.Provides
 class WheelsModule {
 
     @Provides
-    fun ProvideRims(): Rims {
+    fun provideRims(): Rims {
         return Rims()
     }
 
     @Provides
-    fun ProvideTyres(): Tyres {
+    fun provideTyres(): Tyres {
         val tyres = Tyres()
         tyres.inflate()
         return tyres
     }
 
     @Provides
-    fun ProvidesWheels(rims: Rims, tyres: Tyres): Wheels {
+    fun providesWheels(rims: Rims, tyres: Tyres): Wheels {
         return Wheels(rims, tyres)
     }
 
