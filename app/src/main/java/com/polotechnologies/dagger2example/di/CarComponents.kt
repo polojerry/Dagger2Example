@@ -4,7 +4,7 @@ import com.polotechnologies.dagger2example.MainActivity
 import com.polotechnologies.dagger2example.dataClass.Car
 import dagger.Component
 
-@Component
+@Component (modules = [WheelsModule::class])
 interface CarComponents {
     val car: Car
 
