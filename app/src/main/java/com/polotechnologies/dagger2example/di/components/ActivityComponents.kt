@@ -1,18 +1,18 @@
-package com.polotechnologies.dagger2example.di
+package com.polotechnologies.dagger2example.di.components
 
 import com.polotechnologies.dagger2example.MainActivity
 import com.polotechnologies.dagger2example.dataClass.car.Car
-import com.polotechnologies.dagger2example.di.modules.DieselEngineModule
 import com.polotechnologies.dagger2example.di.modules.PetrolEngineModule
 import com.polotechnologies.dagger2example.di.modules.WheelsModule
+import com.polotechnologies.dagger2example.di.scopes.ApplicationScope
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [WheelsModule::class, PetrolEngineModule::class])
-interface CarComponents {
+@ApplicationScope
+@Component(dependencies = [ApplicationComponent::class], modules = [WheelsModule::class, PetrolEngineModule::class])
+interface ActivityComponents {
     val car: Car
 
     fun inject(mainActivity: MainActivity)
@@ -26,7 +26,9 @@ interface CarComponents {
         @BindsInstance
         fun engineCapacityBuilder(@Named("engineCapacity") engineCapacity: Int): Builder
 
-        fun build(): CarComponents
+        fun applicationComponent(component: ApplicationComponent) : Builder
+
+        fun build(): ActivityComponents
 
     }
 }

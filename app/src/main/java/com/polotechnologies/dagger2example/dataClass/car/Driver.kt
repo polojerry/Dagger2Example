@@ -1,11 +1,11 @@
 package com.polotechnologies.dagger2example.dataClass.car
 
 import android.util.Log
+import com.polotechnologies.dagger2example.di.scopes.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class Driver @Inject constructor() {
+class Driver {
     companion object {
         private const val TAG = "Car"
     }
