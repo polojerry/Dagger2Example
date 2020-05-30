@@ -1,5 +1,6 @@
 package com.polotechnologies.dagger2example.di.components
 
+import android.app.AppComponentFactory
 import com.polotechnologies.dagger2example.di.modules.DieselEngineModule
 import com.polotechnologies.dagger2example.di.modules.DriverModule
 import dagger.Component
@@ -9,5 +10,12 @@ import javax.inject.Singleton
 @Singleton
 interface ApplicationComponent {
 
-    fun getActivityComponents(dieselEngineModule: DieselEngineModule) : ActivityComponents
+    fun getActivityComponentsFactory() : ActivityComponents.Factory
+
+    @Component.Factory
+    interface Factory{
+
+        fun create(driverModule: DriverModule) : ApplicationComponent
+
+    }
 }

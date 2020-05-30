@@ -13,24 +13,16 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @ApplicationScope
-@Subcomponent(modules = [WheelsModule::class, DieselEngineModule::class])
+@Subcomponent(modules = [WheelsModule::class, PetrolEngineModule::class])
 interface ActivityComponents {
     val car: Car
 
     fun inject(mainActivity: MainActivity)
 
-    /*@Component.Builder
-    interface Builder {
+    @Subcomponent.Factory
+    interface Factory{
 
-        @BindsInstance
-        fun horsePowerBuilder(@Named("horsePower") horsePower: Int): Builder
-
-        @BindsInstance
-        fun engineCapacityBuilder(@Named("engineCapacity") engineCapacity: Int): Builder
-
-        fun applicationComponent(component: ApplicationComponent) : Builder
-
-        fun build(): ActivityComponents
-
-    }*/
+        fun create(@BindsInstance @Named("horsePower") horsePower: Int,
+            @BindsInstance @Named("engineCapacity") engineCapacity: Int) : ActivityComponents
+    }
 }

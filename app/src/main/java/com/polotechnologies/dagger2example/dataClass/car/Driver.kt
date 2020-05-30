@@ -5,7 +5,7 @@ import com.polotechnologies.dagger2example.di.scopes.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Singleton
 
-class Driver {
+class Driver(val driverName: String) {
     companion object {
         private const val TAG = "Car"
     }
